@@ -1,0 +1,13 @@
+/*
+Theme Name:twentyseventeen-child
+Template:twentyseventeen
+Version:2.2
+*/
+
+@media screen and (min-width: 48em) {
+        .site-navigation-fixed.navigation-top {
+                bottom: 0;
+                position: absolute;
+                z-index: 3;
+        }
+}

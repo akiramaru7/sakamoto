@@ -664,3 +664,16 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+/*
+ * 投稿にアーカイブ(投稿一覧)を持たせるようにします。
+ * ※ 記載後にパーマリンク設定で「変更を保存」してください。
+ */
+function post_has_archive( $args, $post_type ) {
+	if ( 'post' == $post_type ) {
+		$args['rewrite'] = true;
+		$args['has_archive'] = 'post-all'; // ページ名
+	}
+	return $args;
+}
+add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
